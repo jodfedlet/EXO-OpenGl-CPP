@@ -21,7 +21,7 @@ void curva(){
 		glColor3f(1,1,1);	glVertex2f(2.0,4.0);
 		glColor3f(1,1,1);	glVertex2f(3.0,-1.5);*/
 		double x0 = -2.0, x1 = -1.5 , x2 = 2.0 , x3 = 3.0, y0 = -1.0 ,y1 =4.0 , y2 = 4 , y3 = -1.5 ;
-
+		glColor3f(1,1,1);
 		for (double t = 0; t < 1; t+=0.001)
 		{
 			glVertex2f((((1-t)*(1-t)*(1-t)*x0) + (3*t*(1-t)*(1-t)*x1) + (3*t*(1-t)*x2) + t*t*t *x3),     (((1-t)*(1-t)*(1-t)*y0) + (3*t*(1-t)*(1-t)*y1) + (3*t*(1-t)*y2) + t*t*t *y3));
@@ -97,10 +97,17 @@ void keyboard(unsigned char key, int x, int y)
 	}
 }
 
-void mouse(int button, int state, int x, int y)
+/*void mouse(int button, int state, int x, int y)
 {
-	std::cout << "Mouse pressed: button=" << button << ", state=" << state << ", x=" << x << " y=" << y << std::endl;
-}
+	for (double i = 0; i < ; ++i)
+	{
+		for (double j = 0; i < count; ++i)
+		{
+		
+		}
+	}
+	std::cout << "Mouse pressed: button=" << button << ", state=" << state << ", x=" << x[i] << " y=" << y[i] << std::endl;
+}*/
 
 void initView()
 {
@@ -127,7 +134,7 @@ int main(int argc, char** argv)
 	glutCreateWindow("Transformation - Simple");
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
-	glutMouseFunc(mouse);
+	//glutMouseFunc(mouse);
 
 	initView();
 
